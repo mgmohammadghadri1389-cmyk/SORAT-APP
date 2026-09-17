@@ -675,78 +675,98 @@ xmlns="http://www.w3.org/2000/svg">
 
 <ellipse
 cx="260"
-cy="228"
-rx="175"
-ry="16"
+cy="229"
+rx="182"
+ry="15"
 fill="#63d8ff55"
 filter="url(#carGlow)"/>
 
 <path
-d="M103 196l19-93c4-20 18-34 38-42l34-28c10-8 24-13 39-13h54c15 0 29 5 39 13l34 28c20 8 34 22 38 42l19 93-28 25H131z"
+d="M86 181l10-91c3-24 17-39 42-48l40-22h164l40 22c25 9 39 24 42 48l10 91-28 32H114z"
 fill="url(#carBody)"
 stroke="#bcefff"
-stroke-opacity=".7"
+stroke-opacity=".72"
 stroke-width="4"/>
 
 <path
-d="M171 98l19-48c5-13 17-20 31-20h78c14 0 26 7 31 20l19 48z"
+d="M145 91l20-52c5-12 16-19 30-19h130c14 0 25 7 30 19l20 52z"
 fill="url(#glass)"
 stroke="#c8f5ff"
 stroke-opacity=".6"
 stroke-width="4"/>
 
 <path
-d="M260 31v67M182 101h156"
+d="M260 22v69M164 94h192"
 stroke="#c8f5ff"
 stroke-opacity=".46"
 stroke-width="3"/>
 
 <path
-d="M112 132h296M108 177h304"
+d="M101 106h318M101 174h318"
 stroke="#d4f8ff"
-stroke-opacity=".45"
+stroke-opacity=".42"
 stroke-width="3"/>
 
 <path
-d="M117 184h286"
-stroke="#071b2f"
-stroke-opacity=".85"
-stroke-width="14"/>
-
-<path
-d="M119 128h55l-8 28h-53zM346 128h55l6 28h-53z"
-fill="#ff526e"
-stroke="#ffb6c0"
-stroke-opacity=".4"
+d="M105 178h310v24H105z"
+fill="#071b2f"
+stroke="#bcefff"
+stroke-opacity=".3"
 stroke-width="3"/>
 
 <path
 class="car-light"
-d="M127 130h35l-6 21h-34zM358 130h35l6 21h-34z"
-fill="#ffd5dc"
-stroke="#ff7185"
+d="M108 119h68v37h-65l-9-12z"
+fill="#ff526e"
+stroke="#ffb6c0"
+stroke-opacity=".6"
 stroke-width="3"/>
 
+<path
+class="car-light"
+d="M344 119h68l6 25-9 12h-65z"
+fill="#ff526e"
+stroke="#ffb6c0"
+stroke-opacity=".6"
+stroke-width="3"/>
+
+<path
+d="M119 126h46v8h-48zM355 126h46v8h-48z"
+fill="#ffd5dc"
+opacity=".85"/>
+
+<circle
+cx="260"
+cy="124"
+r="13"
+fill="#dff8ff"
+stroke="#7cb4ce"
+stroke-width="3"/>
+
+<path
+d="M254 126l6-8 6 8-6 8z"
+fill="#173d60"/>
+
 <rect
-x="220"
-y="142"
-width="80"
-height="27"
+x="207"
+y="146"
+width="106"
+height="35"
 rx="5"
 fill="#dff8ff"
 stroke="#7cb4ce"
 stroke-width="3"/>
 
 <rect
-x="232"
-y="149"
-width="56"
-height="13"
+x="220"
+y="155"
+width="80"
+height="16"
 rx="3"
 fill="#214660"/>
 
 <path
-d="M120 196h75M325 196h75"
+d="M107 202h86M327 202h86"
 stroke="#63d8ff"
 stroke-opacity=".55"
 stroke-width="5"
@@ -754,46 +774,38 @@ stroke-linecap="round"/>
 
 <g>
 <ellipse
-cx="137"
-cy="199"
-rx="27"
-ry="39"
+cx="116"
+cy="203"
+rx="24"
+ry="35"
 fill="url(#tire)"
 stroke="#83cfff"
 stroke-opacity=".5"
 stroke-width="4"/>
 <ellipse
-cx="137"
-cy="199"
-rx="12"
-ry="20"
+cx="116"
+cy="203"
+rx="10"
+ry="18"
 fill="#9ec7db"/>
-<path
-d="M137 184v30M128 199h18"
-stroke="#183c59"
-stroke-width="4"/>
 </g>
 
 <g>
 <ellipse
-cx="383"
-cy="199"
-rx="27"
-ry="39"
+cx="404"
+cy="203"
+rx="24"
+ry="35"
 fill="url(#tire)"
 stroke="#83cfff"
 stroke-opacity=".5"
 stroke-width="4"/>
 <ellipse
-cx="383"
-cy="199"
-rx="12"
-ry="20"
+cx="404"
+cy="203"
+rx="10"
+ry="18"
 fill="#9ec7db"/>
-<path
-d="M383 184v30M374 199h18"
-stroke="#183c59"
-stroke-width="4"/>
 </g>
 
 </svg>
@@ -938,7 +950,6 @@ close:$('modalClose')
 let watchId=null;
 let running=false;
 let startedAt=0;
-let pausedMs=0;
 let wakeLock=null;
 let lastPos=null;
 let lastValidAt=0;
@@ -999,7 +1010,7 @@ startedAt
 ?((distanceM/1000)/
 Math.max(
 0.001,
-(Date.now()-startedAt-pausedMs)/3600000
+(Date.now()-startedAt)/3600000
 ))
 :0
 )+' <small>km/h</small>';
@@ -1105,7 +1116,7 @@ if(!running)
 return;
 
 el.elapsed.textContent=
-formatTime(Date.now()-startedAt-pausedMs);
+formatTime(Date.now()-startedAt);
 
 render();
 
@@ -1362,7 +1373,6 @@ function reset(){
 stop();
 
 startedAt=0;
-pausedMs=0;
 lastPos=null;
 filtered=0;
 max=0;
@@ -1413,4 +1423,4 @@ reset();
 </script>
 
 </body>
-  </html>
+</html>
