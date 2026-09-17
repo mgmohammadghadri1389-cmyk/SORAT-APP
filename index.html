@@ -12,153 +12,580 @@
 --line:#3c6e97;--text:#f3fbff;--muted:#a5c4dc;
 --accent:#63d8ff;--warn:#ffd166;--danger:#ff7185
 }
+
 *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+
 html,body{
-margin:0;min-height:100%;
+margin:0;
+min-height:100%;
 background:radial-gradient(circle at 50% -18%,#21618d 0,#0c2a49 30%,#061426 72%);
-color:var(--text);font-family:Tahoma,Arial,sans-serif
+color:var(--text);
+font-family:Tahoma,Arial,sans-serif
 }
-body{padding:env(safe-area-inset-top) 14px env(safe-area-inset-bottom)}
-button{font:inherit;border:0;color:inherit;cursor:pointer}
-.app{max-width:580px;margin:auto;padding:18px 0 26px}
-.top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:18px}
-.brand{display:flex;align-items:center;gap:10px}
+
+body{
+padding:env(safe-area-inset-top) 14px env(safe-area-inset-bottom);
+overflow-x:hidden
+}
+
+button{
+font:inherit;
+border:0;
+color:inherit;
+cursor:pointer
+}
+
+.app{
+max-width:580px;
+margin:auto;
+padding:18px 0 26px
+}
+
+.top{
+display:flex;
+align-items:center;
+justify-content:space-between;
+gap:10px;
+margin-bottom:18px
+}
+
+.brand{
+display:flex;
+align-items:center;
+gap:10px
+}
+
 .brand-mark{
-width:42px;height:42px;border:2px solid var(--accent);
-border-radius:13px;display:grid;place-items:center;font-size:22px;
-color:var(--accent);background:#63d8ff12;
+width:42px;
+height:42px;
+border:2px solid var(--accent);
+border-radius:13px;
+display:grid;
+place-items:center;
+font-size:22px;
+color:var(--accent);
+background:#63d8ff12;
 box-shadow:0 0 25px #63d8ff3b
 }
-.brand h1{font-size:18px;margin:0}
-.brand p{color:var(--muted);font-size:11px;margin:4px 0 0}
-.status{
-display:flex;align-items:center;gap:7px;border:1px solid #467aa2;
-background:#0b2239cc;border-radius:999px;padding:8px 11px;
-color:#b3cde1;font-size:11px;white-space:nowrap;
-backdrop-filter:blur(16px)
+
+.brand h1{
+font-size:18px;
+margin:0
 }
-.dot{width:8px;height:8px;background:#76869a;border-radius:50%}
-.status.live{color:var(--accent)}
-.status.live .dot{background:var(--accent);box-shadow:0 0 12px var(--accent)}
-.status.bad{color:var(--danger)}
-.status.bad .dot{background:var(--danger)}
+
+.brand p{
+color:var(--muted);
+font-size:11px;
+margin:4px 0 0
+}
+
+.status{
+display:flex;
+align-items:center;
+gap:7px;
+border:1px solid #467aa2;
+background:#0b2239cc;
+border-radius:999px;
+padding:8px 11px;
+color:#b3cde1;
+font-size:11px;
+white-space:nowrap
+}
+
+.dot{
+width:8px;
+height:8px;
+background:#76869a;
+border-radius:50%
+}
+
+.status.live{
+color:var(--accent)
+}
+
+.status.live .dot{
+background:var(--accent);
+box-shadow:0 0 12px var(--accent)
+}
+
+.status.bad{
+color:var(--danger)
+}
+
+.status.bad .dot{
+background:var(--danger)
+}
 
 .hero{
-min-height:316px;padding:22px 18px 18px;text-align:center;
-position:relative;overflow:hidden;
+min-height:316px;
+padding:22px 18px 18px;
+text-align:center;
+position:relative;
+overflow:hidden;
 background:linear-gradient(145deg,#2f79a53b,#09203a72 74%);
-border:1px solid #83cfff59;border-radius:30px;
+border:1px solid #83cfff59;
+border-radius:30px;
 box-shadow:inset 0 1px #ffffff1c,0 20px 55px #020b1680;
 backdrop-filter:blur(22px)
 }
+
 .hero:after{
-content:"";position:absolute;width:310px;height:310px;
-border-radius:50%;background:#63d8ff12;left:-125px;bottom:-200px
+content:"";
+position:absolute;
+width:310px;
+height:310px;
+border-radius:50%;
+background:#63d8ff12;
+left:-125px;
+bottom:-200px
 }
-.clock-label{font-size:11px;color:#b7d7ed;letter-spacing:1px}
+
+.clock-label{
+font-size:11px;
+color:#b7d7ed;
+letter-spacing:1px
+}
+
 .clock{
 font-family:"Courier New",monospace;
-font-size:clamp(84px,25vw,142px);font-weight:700;
-line-height:1;letter-spacing:-7px;color:#e5f9ff;
+font-size:clamp(84px,25vw,142px);
+font-weight:700;
+line-height:1;
+letter-spacing:-7px;
+color:#e5f9ff;
 text-shadow:0 0 18px #63d8ffb3,0 0 50px #2d9be266;
-direction:ltr;margin-top:23px
+direction:ltr;
+margin-top:23px
 }
-.date{font-size:12px;color:#b5d4e9;margin-top:10px}
+
+.date{
+font-size:12px;
+color:#b5d4e9;
+margin-top:10px
+}
+
 .corner-speed{
-position:absolute;right:16px;bottom:16px;width:142px;
-padding:11px 9px 10px;border:1px solid #9edfff4d;
-border-radius:18px;background:#061a2cb8;
+position:absolute;
+right:16px;
+bottom:16px;
+width:142px;
+padding:11px 9px 10px;
+border:1px solid #9edfff4d;
+border-radius:18px;
+background:#061a2cb8;
 box-shadow:inset 0 1px #ffffff12,0 8px 22px #0004;
-backdrop-filter:blur(16px);text-align:center
+backdrop-filter:blur(16px);
+direction:rtl;
+text-align:center
 }
+
 .corner-speed span{
-display:block;color:#a9cde3;font-size:10px;margin-bottom:2px
+display:block;
+color:#a9cde3;
+font-size:10px;
+margin-bottom:2px
 }
+
 .speed-corner{
-font-family:"Courier New",monospace;font-size:39px;
-line-height:1;color:#fff;font-weight:700;direction:ltr;
-display:inline-block;text-shadow:0 0 16px #63d8ff99
+font-family:"Courier New",monospace;
+font-size:39px;
+line-height:1;
+color:#fff;
+font-weight:700;
+direction:ltr;
+display:inline-block;
+text-shadow:0 0 16px #63d8ff99
 }
-.corner-speed small{font-size:10px;color:var(--accent);margin-right:4px}
-.accuracy-line{font-size:9px;color:var(--muted);margin-top:6px}
-.accuracy-line strong{color:var(--text)}
+
+.corner-speed small{
+font-size:10px;
+color:var(--accent);
+margin-right:4px
+}
+
+.accuracy-line{
+font-size:9px;
+color:var(--muted);
+margin-top:6px
+}
+
+.accuracy-line strong{
+color:var(--text)
+}
+
 .meter{
-height:4px;background:#20364e;border-radius:9px;
-margin:8px auto 0;overflow:hidden
+height:4px;
+background:#20364e;
+border-radius:9px;
+margin:8px auto 0;
+overflow:hidden
 }
+
 .meter i{
-display:block;height:100%;width:0;background:var(--accent);
-border-radius:9px;transition:width .4s
+display:block;
+height:100%;
+width:0;
+background:var(--accent);
+border-radius:9px;
+transition:width .4s
 }
-.controls{display:flex;gap:10px;margin:14px 0}
-.primary,.secondary{height:54px;border-radius:16px;font-weight:700}
-.primary{
-flex:1;background:linear-gradient(135deg,#63e0ff,#42b9ee);
-color:#042039;box-shadow:0 10px 24px #43bde655
+
+.drive-scene{
+height:258px;
+margin-top:14px;
+position:relative;
+overflow:hidden;
+border:1px solid #83cfff59;
+border-radius:28px;
+background:linear-gradient(180deg,#1f66904d 0%,#0b2947bb 58%,#061426 100%);
+box-shadow:inset 0 1px #ffffff1c,0 18px 44px #020b1670;
+backdrop-filter:blur(20px);
+perspective:800px
 }
-.primary.stop{
-background:linear-gradient(135deg,#ff8796,#ed526e);color:#300811
+
+.drive-scene:before{
+content:"";
+position:absolute;
+width:180px;
+height:180px;
+top:-80px;
+left:45px;
+border-radius:50%;
+background:#63d8ff3d;
+filter:blur(35px)
 }
+
+.scene-world{
+position:absolute;
+inset:0;
+transform-style:preserve-3d;
+overflow:hidden
+}
+
+.road-plane{
+position:absolute;
+z-index:1;
+left:-12%;
+right:-12%;
+bottom:-145px;
+height:330px;
+border-radius:50% 50% 0 0;
+background:linear-gradient(90deg,#061321,#1b4d70 48%,#061321);
+transform:rotateX(62deg) translateZ(-12px);
+transform-origin:bottom center;
+box-shadow:0 -5px 30px #63d8ff24
+}
+
+.road-plane:before,
+.road-plane:after{
+display:none
+}
+
+.road-line{
+position:absolute;
+top:-100px;
+bottom:-35px;
+display:block;
+background:repeating-linear-gradient(
+to bottom,
+transparent 0 30px,
+#a5efffba 30px 68px
+);
+animation:roadLines .68s linear infinite
+}
+
+.road-line.center{
+left:50%;
+width:8px;
+transform:translateX(-50%)
+}
+
+.road-line.edge{
+width:4px;
+opacity:.6
+}
+
+.road-line.edge-left{
+left:28%
+}
+
+.road-line.edge-right{
+right:28%
+}
+
+.horizon{
+position:absolute;
+z-index:0;
+left:15%;
+right:15%;
+top:30px;
+height:70px;
+border-radius:50%;
+background:linear-gradient(180deg,#63d8ff3d,#63d8ff00);
+filter:blur(14px)
+}
+
+.car-3d{
+position:absolute;
+z-index:3;
+left:50%;
+bottom:43px;
+width:min(265px,70%);
+height:auto;
+transform:translateX(-50%) translateZ(65px);
+filter:drop-shadow(0 20px 12px #020a14b5);
+animation:carForward 2.2s ease-in-out infinite;
+transform-origin:center bottom
+}
+
+.car-light{
+animation:headLight 1.2s ease-in-out infinite alternate
+}
+
+.scene-bottom{
+position:absolute;
+z-index:4;
+bottom:13px;
+left:16px;
+right:16px;
+display:flex;
+justify-content:space-between;
+direction:rtl;
+color:#9fc4dc;
+font-size:10px
+}
+
+.scene-bottom strong{
+color:#63d8ff;
+font-weight:400
+}
+
+@keyframes roadLines{
+from{transform:translateY(-35px)}
+to{transform:translateY(58px)}
+}
+
+@keyframes carForward{
+0%,100%{
+transform:translateX(-50%) translateZ(65px) translateY(2px) scale(.98)
+}
+50%{
+transform:translateX(-50%) translateZ(65px) translateY(-5px) scale(1)
+}
+}
+
+@keyframes headLight{
+from{opacity:.55}
+to{opacity:1}
+}
+
+.controls{
+display:flex;
+gap:10px;
+margin:14px 0
+}
+
+.primary,
 .secondary{
-width:54px;background:#173e60aa;border:1px solid #4b80a6;
+height:54px;
+border-radius:16px;
+font-weight:700
+}
+
+.primary{
+flex:1;
+background:linear-gradient(135deg,#63e0ff,#42b9ee);
+color:#042039;
+box-shadow:0 10px 24px #43bde655
+}
+
+.primary.stop{
+background:linear-gradient(135deg,#ff8796,#ed526e);
+color:#300811
+}
+
+.secondary{
+width:54px;
+background:#173e60aa;
+border:1px solid #4b80a6;
 font-size:20px
 }
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.card,.chart-card,.details{
+
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:10px
+}
+
+.card,
+.chart-card,
+.details{
 background:linear-gradient(145deg,#16466d66,#0a2038bb);
-border:1px solid #477ba0aa;border-radius:18px;
+border:1px solid #477ba0aa;
+border-radius:18px;
 box-shadow:inset 0 1px #ffffff0d;
 backdrop-filter:blur(18px)
 }
-.card{padding:15px 14px;min-height:88px}
-.label{color:var(--muted);font-size:11px;margin-bottom:10px}
-.value{
-font-size:24px;font-weight:700;font-variant-numeric:tabular-nums;
-direction:ltr;text-align:right
+
+.card{
+padding:15px 14px;
+min-height:88px
 }
-.value small{font-size:11px;color:var(--muted);font-weight:400}
-.value.green{color:var(--accent)}
-.chart-card{margin-top:10px;padding:14px}
+
+.label{
+color:var(--muted);
+font-size:11px;
+margin-bottom:10px
+}
+
+.value{
+font-size:24px;
+font-weight:700;
+font-variant-numeric:tabular-nums;
+direction:ltr;
+text-align:right
+}
+
+.value small{
+font-size:11px;
+color:var(--muted);
+font-weight:400
+}
+
+.value.green{
+color:var(--accent)
+}
+
+.chart-card{
+margin-top:10px;
+padding:14px
+}
+
 .chart-head{
-display:flex;justify-content:space-between;align-items:center;
+display:flex;
+justify-content:space-between;
+align-items:center;
 margin-bottom:8px
 }
-.chart-head span{font-size:12px}
-.chart-head small{color:#99bdd7;font-size:10px}
-canvas{display:block;width:100%;height:78px}
-.details{margin-top:10px;padding:4px 14px}
+
+.chart-head span{
+font-size:12px
+}
+
+.chart-head small{
+color:#99bdd7;
+font-size:10px
+}
+
+canvas{
+display:block;
+width:100%;
+height:78px
+}
+
+.details{
+margin-top:10px;
+padding:4px 14px
+}
+
 .row{
-display:flex;justify-content:space-between;align-items:center;
-padding:13px 0;border-bottom:1px solid #32608499;font-size:12px
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:13px 0;
+border-bottom:1px solid #32608499;
+font-size:12px
 }
-.row:last-child{border:0}
-.row span:first-child{color:var(--muted)}
-.row span:last-child{direction:ltr;text-align:left}
-.quality{color:var(--accent)!important}
-.quality.warn{color:var(--warn)!important}
-.quality.bad{color:var(--danger)!important}
+
+.row:last-child{
+border:0
+}
+
+.row span:first-child{
+color:var(--muted)
+}
+
+.row span:last-child{
+direction:ltr;
+text-align:left
+}
+
+.quality{
+color:var(--accent)!important
+}
+
+.quality.warn{
+color:var(--warn)!important
+}
+
+.quality.bad{
+color:var(--danger)!important
+}
+
 .notice{
-margin-top:12px;padding:12px 13px;
-background:#12365899;border:1px solid #4d82a6aa;
-border-radius:15px;color:#bfd0e3;font-size:11px;line-height:1.9
+margin-top:12px;
+padding:12px 13px;
+background:#12365899;
+border:1px solid #4d82a6aa;
+border-radius:15px;
+color:#bfd0e3;
+font-size:11px;
+line-height:1.9
 }
-.notice b{color:var(--warn)}
-.footer{text-align:center;color:#87aac4;font-size:10px;margin-top:17px}
-.hidden{display:none!important}
+
+.notice b{
+color:var(--warn)
+}
+
+.footer{
+text-align:center;
+color:#87aac4;
+font-size:10px;
+margin-top:17px
+}
+
+.hidden{
+display:none!important
+}
+
 .modal{
-position:fixed;inset:0;background:#02060bbd;display:grid;
-place-items:center;padding:14px;z-index:5
+position:fixed;
+inset:0;
+background:#02060bbd;
+display:grid;
+place-items:center;
+padding:14px;
+z-index:5
 }
+
 .modal-box{
-width:min(560px,100%);background:#122237;
-border:1px solid #34506c;border-radius:24px;padding:20px
+width:min(560px,100%);
+background:#122237;
+border:1px solid #34506c;
+border-radius:24px;
+padding:20px
 }
-.modal-box h2{font-size:18px;margin:0 0 12px}
-.modal-box p{font-size:13px;line-height:2;color:#c9d8e7}
+
+.modal-box h2{
+font-size:18px;
+margin:0 0 12px
+}
+
+.modal-box p{
+font-size:13px;
+line-height:2;
+color:#c9d8e7
+}
+
 .modal-box button{
-width:100%;height:48px;border-radius:14px;
-background:var(--accent);color:#031a16;font-weight:700
+width:100%;
+height:48px;
+border-radius:14px;
+background:var(--accent);
+color:#031a16;
+font-weight:700
 }
+
 @media(max-width:380px){
 .hero{min-height:295px}
 .clock{font-size:78px;margin-top:20px}
@@ -179,8 +606,10 @@ background:var(--accent);color:#031a16;font-weight:700
 <p>ساعت دیجیتال بزرگ با سرعت در گوشه</p>
 </div>
 </div>
+
 <div id="status" class="status">
-<i class="dot"></i><span>آماده</span>
+<i class="dot"></i>
+<span>آماده</span>
 </div>
 </header>
 
@@ -196,35 +625,226 @@ background:var(--accent);color:#031a16;font-weight:700
 <div id="accuracyText" class="accuracy-line">
 دقت GPS: هنوز دریافت نشده
 </div>
-<div class="meter"><i id="meterBar"></i></div>
+<div class="meter">
+<i id="meterBar"></i>
+</div>
+</div>
+</section>
+
+<section class="drive-scene" aria-label="ماشین در حال حرکت">
+<div class="scene-world">
+<div class="horizon"></div>
+
+<div class="road-plane">
+<i class="road-line edge edge-left"></i>
+<i class="road-line center"></i>
+<i class="road-line edge edge-right"></i>
+</div>
+
+<svg
+class="car-3d"
+viewBox="0 0 520 260"
+role="img"
+aria-label="ماشین آبی از نمای پشت در حال حرکت به جلو"
+xmlns="http://www.w3.org/2000/svg">
+
+<defs>
+<linearGradient id="carBody" x1="0" y1="0" x2="1" y2="1">
+<stop stop-color="#d9f8ff"/>
+<stop offset=".2" stop-color="#57c9f2"/>
+<stop offset=".62" stop-color="#2375aa"/>
+<stop offset="1" stop-color="#0b3158"/>
+</linearGradient>
+
+<linearGradient id="glass" x1="0" y1="0" x2="1" y2="1">
+<stop stop-color="#dcf8ff" stop-opacity=".9"/>
+<stop offset=".5" stop-color="#4a9bc2" stop-opacity=".55"/>
+<stop offset="1" stop-color="#09233d" stop-opacity=".9"/>
+</linearGradient>
+
+<linearGradient id="tire" x1="0" y1="0" x2="0" y2="1">
+<stop stop-color="#405a70"/>
+<stop offset=".3" stop-color="#07101c"/>
+<stop offset="1" stop-color="#02060b"/>
+</linearGradient>
+
+<filter id="carGlow">
+<feGaussianBlur stdDeviation="7"/>
+</filter>
+</defs>
+
+<ellipse
+cx="260"
+cy="228"
+rx="175"
+ry="16"
+fill="#63d8ff55"
+filter="url(#carGlow)"/>
+
+<path
+d="M103 196l19-93c4-20 18-34 38-42l34-28c10-8 24-13 39-13h54c15 0 29 5 39 13l34 28c20 8 34 22 38 42l19 93-28 25H131z"
+fill="url(#carBody)"
+stroke="#bcefff"
+stroke-opacity=".7"
+stroke-width="4"/>
+
+<path
+d="M171 98l19-48c5-13 17-20 31-20h78c14 0 26 7 31 20l19 48z"
+fill="url(#glass)"
+stroke="#c8f5ff"
+stroke-opacity=".6"
+stroke-width="4"/>
+
+<path
+d="M260 31v67M182 101h156"
+stroke="#c8f5ff"
+stroke-opacity=".46"
+stroke-width="3"/>
+
+<path
+d="M112 132h296M108 177h304"
+stroke="#d4f8ff"
+stroke-opacity=".45"
+stroke-width="3"/>
+
+<path
+d="M117 184h286"
+stroke="#071b2f"
+stroke-opacity=".85"
+stroke-width="14"/>
+
+<path
+d="M119 128h55l-8 28h-53zM346 128h55l6 28h-53z"
+fill="#ff526e"
+stroke="#ffb6c0"
+stroke-opacity=".4"
+stroke-width="3"/>
+
+<path
+class="car-light"
+d="M127 130h35l-6 21h-34zM358 130h35l6 21h-34z"
+fill="#ffd5dc"
+stroke="#ff7185"
+stroke-width="3"/>
+
+<rect
+x="220"
+y="142"
+width="80"
+height="27"
+rx="5"
+fill="#dff8ff"
+stroke="#7cb4ce"
+stroke-width="3"/>
+
+<rect
+x="232"
+y="149"
+width="56"
+height="13"
+rx="3"
+fill="#214660"/>
+
+<path
+d="M120 196h75M325 196h75"
+stroke="#63d8ff"
+stroke-opacity=".55"
+stroke-width="5"
+stroke-linecap="round"/>
+
+<g>
+<ellipse
+cx="137"
+cy="199"
+rx="27"
+ry="39"
+fill="url(#tire)"
+stroke="#83cfff"
+stroke-opacity=".5"
+stroke-width="4"/>
+<ellipse
+cx="137"
+cy="199"
+rx="12"
+ry="20"
+fill="#9ec7db"/>
+<path
+d="M137 184v30M128 199h18"
+stroke="#183c59"
+stroke-width="4"/>
+</g>
+
+<g>
+<ellipse
+cx="383"
+cy="199"
+rx="27"
+ry="39"
+fill="url(#tire)"
+stroke="#83cfff"
+stroke-opacity=".5"
+stroke-width="4"/>
+<ellipse
+cx="383"
+cy="199"
+rx="12"
+ry="20"
+fill="#9ec7db"/>
+<path
+d="M383 184v30M374 199h18"
+stroke="#183c59"
+stroke-width="4"/>
+</g>
+
+</svg>
+</div>
+
+<div class="scene-bottom">
+<span>حرکت زنده</span>
+<strong>GPS SPEED • km/h</strong>
 </div>
 </section>
 
 <div class="controls">
-<button id="startBtn" class="primary">شروع تشخیص سرعت</button>
-<button id="resetBtn" class="secondary">↺</button>
+<button id="startBtn" class="primary">
+شروع تشخیص سرعت
+</button>
+
+<button id="resetBtn" class="secondary" aria-label="پاک کردن">
+↺
+</button>
 </div>
 
 <section class="grid">
+
 <div class="card">
 <div class="label">بیشترین سرعت</div>
-<div id="maxSpeed" class="value green">۰ <small>km/h</small></div>
+<div id="maxSpeed" class="value green">
+۰ <small>km/h</small>
+</div>
 </div>
 
 <div class="card">
 <div class="label">میانگین سرعت</div>
-<div id="avgSpeed" class="value">۰ <small>km/h</small></div>
+<div id="avgSpeed" class="value">
+۰ <small>km/h</small>
+</div>
 </div>
 
 <div class="card">
 <div class="label">مسافت طی‌شده</div>
-<div id="distance" class="value">۰٫۰۰ <small>km</small></div>
+<div id="distance" class="value">
+۰٫۰۰ <small>km</small>
+</div>
 </div>
 
 <div class="card">
 <div class="label">زمان حرکت</div>
-<div id="elapsed" class="value">۰۰:۰۰:۰۰</div>
+<div id="elapsed" class="value">
+۰۰:۰۰:۰۰
 </div>
+</div>
+
 </section>
 
 <section class="chart-card">
@@ -236,22 +856,27 @@ background:var(--accent);color:#031a16;font-weight:700
 </section>
 
 <section class="details">
+
 <div class="row">
 <span>کیفیت سیگنال</span>
 <span id="quality" class="quality">منتظر GPS</span>
 </div>
+
 <div class="row">
 <span>سرعت خام GPS</span>
 <span id="rawSpeed">— km/h</span>
 </div>
+
 <div class="row">
 <span>موقعیت جغرافیایی</span>
 <span id="coords">—</span>
 </div>
+
 <div class="row">
 <span>ارتفاع</span>
 <span id="altitude">—</span>
 </div>
+
 </section>
 
 <div class="notice">
@@ -260,7 +885,7 @@ background:var(--accent);color:#031a16;font-weight:700
 </div>
 
 <div class="footer">
-سرعت از GPS گوشی خوانده می‌شود؛ در تونل و داخل ساختمان ممکن است خطا زیاد شود.
+سرعت از GPS گوشی خوانده می‌شود؛ در تونل، پارکینگ و داخل ساختمان ممکن است خطا زیاد شود.
 </div>
 
 </main>
@@ -269,7 +894,8 @@ background:var(--accent);color:#031a16;font-weight:700
 <div class="modal-box">
 <h2>دسترسی موقعیت مکانی لازم است</h2>
 <p id="modalText">
-برای تشخیص سرعت، دسترسی موقعیت مکانی را فعال کنید.
+برای تشخیص سرعت، دسترسی Location را روی «هنگام استفاده از برنامه» بگذارید.
+در آیفون، فایل باید با Safari و از یک آدرس HTTPS باز شود.
 </p>
 <button id="modalClose">متوجه شدم</button>
 </div>
@@ -280,7 +906,11 @@ background:var(--accent);color:#031a16;font-weight:700
 'use strict';
 
 const $=id=>document.getElementById(id);
-const fa=n=>Number(n).toLocaleString('fa-IR',{maximumFractionDigits:2});
+
+const fa=n=>Number(n).toLocaleString('fa-IR',{
+maximumFractionDigits:2
+});
+
 const pad=n=>String(n).padStart(2,'0');
 
 const el={
@@ -308,6 +938,7 @@ close:$('modalClose')
 let watchId=null;
 let running=false;
 let startedAt=0;
+let pausedMs=0;
 let wakeLock=null;
 let lastPos=null;
 let lastValidAt=0;
@@ -322,15 +953,18 @@ const clockEl=$('clock');
 const dateEl=$('date');
 
 function updateClock(){
+
 const now=new Date();
 
-clockEl.textContent=new Intl.DateTimeFormat('fa-IR',{
+clockEl.textContent=
+new Intl.DateTimeFormat('fa-IR',{
 hour:'2-digit',
 minute:'2-digit',
 hour12:false
 }).format(now);
 
-dateEl.textContent=new Intl.DateTimeFormat('fa-IR',{
+dateEl.textContent=
+new Intl.DateTimeFormat('fa-IR',{
 weekday:'long',
 day:'numeric',
 month:'long'
@@ -350,79 +984,115 @@ el.modal.classList.remove('hidden');
 }
 
 function render(){
+
 el.speed.textContent=fa(Math.round(filtered));
-el.max.innerHTML=fa(Math.round(max))+' <small>km/h</small>';
-el.distance.innerHTML=fa(distanceM/1000)+' <small>km</small>';
 
-const avg=startedAt
-?((distanceM/1000)/Math.max(0.001,(Date.now()-startedAt)/3600000))
-:0;
+el.max.innerHTML=
+fa(Math.round(max))+' <small>km/h</small>';
 
-el.avg.innerHTML=fa(avg)+' <small>km/h</small>';
+el.distance.innerHTML=
+fa(distanceM/1000)+' <small>km</small>';
+
+el.avg.innerHTML=
+fa(
+startedAt
+?((distanceM/1000)/
+Math.max(
+0.001,
+(Date.now()-startedAt-pausedMs)/3600000
+))
+:0
+)+' <small>km/h</small>';
 }
 
 function formatTime(ms){
+
 let s=Math.max(0,Math.floor(ms/1000));
+
 return pad(Math.floor(s/3600))+':'+
-pad(Math.floor(s/60)%60)+':'+pad(s%60);
+pad(Math.floor(s/60)%60)+':'+
+pad(s%60);
 }
 
 function hav(a,b){
+
 const R=6371000;
 const rad=Math.PI/180;
+
 const dLat=(b.lat-a.lat)*rad;
 const dLon=(b.lon-a.lon)*rad;
 
-const x=Math.sin(dLat/2)**2+
-Math.cos(a.lat*rad)*Math.cos(b.lat*rad)*
+const x=
+Math.sin(dLat/2)**2+
+Math.cos(a.lat*rad)*
+Math.cos(b.lat*rad)*
 Math.sin(dLon/2)**2;
 
 return 2*R*Math.asin(Math.sqrt(x));
 }
 
 function median(arr){
+
 const a=arr.slice().sort((x,y)=>x-y);
-return a.length?a[Math.floor(a.length/2)]:0;
+
+return a.length
+?a[Math.floor(a.length/2)]
+:0;
 }
 
 function qualityFor(acc){
-if(!Number.isFinite(acc))return['نامشخص','bad',0];
-if(acc<=10)return['عالی','',100];
-if(acc<=25)return['خوب','',75];
-if(acc<=50)return['متوسط','warn',50];
+
+if(!Number.isFinite(acc))
+return['نامشخص','bad',0];
+
+if(acc<=10)
+return['عالی','',100];
+
+if(acc<=25)
+return['خوب','',75];
+
+if(acc<=50)
+return['متوسط','warn',50];
+
 return['ضعیف','bad',20];
 }
 
 function updateChart(){
+
 const w=el.chart.width;
 const h=el.chart.height;
 
 ctx.clearRect(0,0,w,h);
-ctx.strokeStyle='#244c6d';
+ctx.strokeStyle='#20364e';
 ctx.lineWidth=2;
 
 for(let i=1;i<4;i++){
+
 ctx.beginPath();
 ctx.moveTo(0,i*h/4);
 ctx.lineTo(w,i*h/4);
 ctx.stroke();
 }
 
-if(speedHistory.length<2)return;
+if(speedHistory.length<2)
+return;
 
 const maxY=Math.max(40,...speedHistory,80);
 
 ctx.beginPath();
 
 speedHistory.forEach((v,i)=>{
+
 const x=i/(speedHistory.length-1)*w;
 const y=h-(v/maxY)*(h-12)-6;
 
-if(i)ctx.lineTo(x,y);
-else ctx.moveTo(x,y);
+if(i)
+ctx.lineTo(x,y);
+else
+ctx.moveTo(x,y);
 });
 
-ctx.strokeStyle='#63d8ff';
+ctx.strokeStyle='#23d3a7';
 ctx.lineWidth=5;
 ctx.lineJoin='round';
 ctx.lineCap='round';
@@ -430,15 +1100,24 @@ ctx.stroke();
 }
 
 function tick(){
-if(!running)return;
 
-el.elapsed.textContent=formatTime(Date.now()-startedAt);
+if(!running)
+return;
+
+el.elapsed.textContent=
+formatTime(Date.now()-startedAt-pausedMs);
+
 render();
 
 if(Date.now()-lastValidAt>7000){
+
 setStatus('در حال جست‌وجوی GPS','bad');
-el.quality.textContent='سیگنال قطع یا ضعیف';
-el.quality.className='quality bad';
+
+el.quality.textContent=
+'سیگنال قطع یا ضعیف';
+
+el.quality.className=
+'quality bad';
 }
 
 requestAnimationFrame(tick);
@@ -449,25 +1128,34 @@ function handlePosition(position){
 const c=position.coords;
 const t=position.timestamp||Date.now();
 const acc=Number(c.accuracy)||999;
+
 const q=qualityFor(acc);
 
-el.acc.innerHTML='دقت GPS: <strong>±'+
-fa(Math.round(acc))+' متر</strong>';
+el.acc.innerHTML=
+'دقت GPS: <strong>±'+
+fa(Math.round(acc))+
+' متر</strong>';
 
 el.bar.style.width=q[2]+'%';
 
 el.bar.style.background=
-q[1]==='bad'?'var(--danger)':
-q[1]==='warn'?'var(--warn)':
-'var(--accent)';
+q[1]==='bad'
+?'var(--danger)'
+:q[1]==='warn'
+?'var(--warn)'
+:'var(--accent)';
 
-el.quality.textContent=q[0]+' (±'+
-fa(Math.round(acc))+' متر)';
+el.quality.textContent=
+q[0]+' (±'+
+fa(Math.round(acc))+
+' متر)';
 
-el.quality.className='quality '+q[1];
+el.quality.className=
+'quality '+q[1];
 
 el.coords.textContent=
-Number(c.latitude).toFixed(5)+' , '+
+Number(c.latitude).toFixed(5)+
+' , '+
 Number(c.longitude).toFixed(5);
 
 el.alt.textContent=
@@ -478,8 +1166,10 @@ Number.isFinite(c.altitude)
 setStatus('GPS فعال','live');
 lastValidAt=Date.now();
 
-let raw=Number.isFinite(c.speed)&&c.speed>=0
-?c.speed*3.6:null;
+let raw=
+Number.isFinite(c.speed)&&c.speed>=0
+?c.speed*3.6
+:null;
 
 const current={
 lat:c.latitude,
@@ -495,49 +1185,62 @@ if(lastPos){
 dt=Math.max(.1,(t-lastPos.t)/1000);
 segment=hav(lastPos,current);
 
-const plausible=segment<=Math.max(250,dt*90);
+const plausible=
+segment<=Math.max(250,dt*90);
 
-if(raw===null&&plausible){
+if(raw===null&&plausible)
 raw=segment/dt*3.6;
-}
 
-if(plausible&&acc<=60&&lastPos.acc<=60){
+if(plausible&&acc<=60&&lastPos.acc<=60)
 distanceM+=Math.min(segment,dt*100/3.6);
-}
 
-if(raw!==null&&(!plausible||raw>400)){
+if(raw!==null&&(!plausible||raw>400))
 raw=null;
 }
-}
 
-lastPos={...current,acc};
+lastPos={
+...current,
+acc
+};
 
-if(raw===null)raw=0;
+if(raw===null)
+raw=0;
 
-el.raw.textContent=fa(raw)+' km/h';
+el.raw.textContent=
+fa(raw)+' km/h';
 
-if(raw<1.5)raw=0;
+if(raw<1.5)
+raw=0;
 
 samples.push(raw);
 
-if(samples.length>7)samples.shift();
+if(samples.length>7)
+samples.shift();
 
 const med=median(samples);
 
-if(filtered===0){
+if(filtered===0||!lastValidAt){
 filtered=med;
 }else{
-const alpha=Math.abs(med-filtered)>35?.46:.28;
-filtered=filtered*(1-alpha)+med*alpha;
+
+const alpha=
+Math.abs(med-filtered)>35
+?.46
+:.28;
+
+filtered=
+filtered*(1-alpha)+med*alpha;
 }
 
-if(filtered<1.5)filtered=0;
+if(filtered<1.5)
+filtered=0;
 
 max=Math.max(max,filtered);
 
 speedHistory.push(filtered);
 
-if(speedHistory.length>60)speedHistory.shift();
+if(speedHistory.length>60)
+speedHistory.shift();
 
 updateChart();
 render();
@@ -548,36 +1251,58 @@ function handleError(error){
 let msg='GPS در دسترس نیست.';
 
 if(error&&error.code===1){
-msg='دسترسی موقعیت مکانی رد شده است. از تنظیمات گوشی، Location را فعال کنید.';
+
+msg=
+'دسترسی موقعیت مکانی رد شده است. از تنظیمات گوشی، Location را برای Safari یا مرورگر فعال کنید.';
 }
 
 if(error&&error.code===3){
-msg='پاسخ GPS دیر رسید. در فضای باز دوباره امتحان کنید.';
+
+msg=
+'پاسخ GPS دیر رسید. در فضای باز بایستید و دوباره شروع کنید.';
 }
 
 setStatus('GPS در دسترس نیست','bad');
+
 el.quality.textContent='خطا';
 el.quality.className='quality bad';
+
 showModal(msg);
 }
 
 async function keepAwake(){
+
 try{
+
 if('wakeLock' in navigator){
-wakeLock=await navigator.wakeLock.request('screen');
+
+wakeLock=
+await navigator.wakeLock.request('screen');
 }
+
 }catch(e){}
 }
 
 async function start(){
 
 if(!navigator.geolocation){
-showModal('این مرورگر از GPS پشتیبانی نمی‌کند.');
+
+showModal(
+'این مرورگر از GPS پشتیبانی نمی‌کند. برنامه را با Safari یا Chrome و از آدرس HTTPS باز کنید.'
+);
+
 return;
 }
 
-if(location.protocol!=='https:'&&location.hostname!=='localhost'){
-showModal('برای دسترسی GPS، برنامه را روی HTTPS یا GitHub Pages باز کنید.');
+if(
+location.protocol!=='https:'&&
+location.hostname!=='localhost'
+){
+
+showModal(
+'برای دسترسی GPS، این فایل را روی HTTPS مثل GitHub Pages باز کنید؛ بازکردن مستقیم فایل ممکن است موقعیت مکانی را مسدود کند.'
+);
+
 return;
 }
 
@@ -588,12 +1313,14 @@ lastPos=null;
 samples=[];
 
 setStatus('در حال اتصال به GPS');
+
 el.start.textContent='توقف سرعت‌سنج';
 el.start.classList.add('stop');
 
 await keepAwake();
 
-watchId=navigator.geolocation.watchPosition(
+watchId=
+navigator.geolocation.watchPosition(
 handlePosition,
 handleError,
 {
@@ -611,17 +1338,21 @@ function stop(){
 running=false;
 
 if(watchId!==null){
+
 navigator.geolocation.clearWatch(watchId);
 }
 
 watchId=null;
 
 if(wakeLock){
+
 wakeLock.release().catch(()=>{});
 }
 
 wakeLock=null;
+
 setStatus('متوقف شد');
+
 el.start.textContent='شروع تشخیص سرعت';
 el.start.classList.remove('stop');
 }
@@ -631,6 +1362,7 @@ function reset(){
 stop();
 
 startedAt=0;
+pausedMs=0;
 lastPos=null;
 filtered=0;
 max=0;
@@ -651,20 +1383,34 @@ render();
 updateChart();
 }
 
-el.start.addEventListener('click',()=>running?stop():start());
-el.reset.addEventListener('click',reset);
-el.close.addEventListener('click',()=>el.modal.classList.add('hidden'));
+el.start.addEventListener(
+'click',
+()=>running?stop():start()
+);
 
-document.addEventListener('visibilitychange',()=>{
-if(document.visibilityState==='visible'&&running){
+el.reset.addEventListener(
+'click',
+reset
+);
+
+el.close.addEventListener(
+'click',
+()=>el.modal.classList.add('hidden')
+);
+
+document.addEventListener(
+'visibilitychange',
+()=>{
+if(document.visibilityState==='visible'&&running)
 keepAwake();
 }
-});
+);
 
 updateClock();
 reset();
 
 })();
 </script>
+
 </body>
-</html>
+  </html>
